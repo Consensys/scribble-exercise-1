@@ -65,9 +65,12 @@ Properties that make sense:
 <details>
 <summary> If the transfer succeeds then the sender will have `_value` subtracted from it’s balance (unless you transfer to yourself)</summary>
 <br>
-```
+<pre>
 /// if_succeeds {:msg "The sender has _value less balance"} msg.sender != _to ==> old(_balances[msg.sender]) - _value == _balances[msg.sender]; 
-```
+function transfer(address _to, uint256 _value) external returns (bool) {
+    ...
+}
+</pre>
 </details>
 
 <details>
