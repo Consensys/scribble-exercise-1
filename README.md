@@ -5,7 +5,9 @@ We'll use Scribble to annotate it with properties, and use Mythril to automatica
 
 ### Handy Links
 Scribble Repository -> https://github.com/ConsenSys/Scribble
+
 Mythril Repository -> https://github.com/ConsenSys/Mythril
+
 Scribble Docs 📚 -> https://docs.scribble.codes/
 
 ### Installation
