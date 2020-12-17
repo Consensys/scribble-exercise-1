@@ -99,4 +99,7 @@ function transfer(address _to, uint256 _value) external returns (bool) {
 ```
 scribbe --arm -m file ./contracts/vulnerableERC20.sol
 myth analyze ./contracts/vulnerableERC20.sol
+
+# Always clean up after yourself 😉
+scribble --disarm -m file ./contracts/vulnerableERC20.sol
 ```
