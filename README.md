@@ -85,7 +85,7 @@ function transfer(address _to, uint256 _value) external returns (bool) {
 <summary>  If the transfer succeeds then the sum of the balances between the sender and receiver remains he same</summary>
 <br>
 <pre>
-// if_succeeds {:msg "Transfer does not modify the sum of balances" } old(_balances[_to]) + old(_balances[msg.sender]) == _balances[_to] + _balances[msg.sender];
+/// if_succeeds {:msg "Transfer does not modify the sum of balances" } old(_balances[_to]) + old(_balances[msg.sender]) == _balances[_to] + _balances[msg.sender];
 function transfer(address _to, uint256 _value) external returns (bool) {
     ...
 }
