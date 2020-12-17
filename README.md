@@ -48,12 +48,6 @@ return true;
 
 ### Adding annotations
 Properties that make sense:
-
-* If the transfer function succeeds then the recipient had sufficient balance at the start
-* If the transfer succeeds then the sender will have `_value` subtracted from it’s balance (unless you transfer to yourself)
-* If the transfer succeeds then the receiver will have `_value` added to it’s balance  (unless you transfer to yourself)
-* If the transfer succeeds then the sum of the balances between the sender and receiver remains he same
- 
 <details>
 <summary> If the transfer function succeeds then the recipient had sufficient balance at the start</summary>
 <br>
