@@ -16,7 +16,7 @@ Scribble Docs 📚 -> https://docs.scribble.codes/
 pip3 install mythril
 
 # Make sure to use node 10-12
-npm install scribble --global
+npm install eth-scribble --global
 npm install truffle --global
 npm install ganache-cli --global
 ```
@@ -34,17 +34,16 @@ truffle unbox ConsenSys/scribble-exercise-1
 Have a look at the `transfer()` function:
 ```
 function transfer(address _to, uint256 _value) external returns (bool) {
-address from = msg.sender;
-require(_value <= _balances[from]);
+    address from = msg.sender;
+    require(_value <= _balances[from]);
 
+    uint256 newBalanceFrom = _balances[from] - _value;
+    uint256 newBalanceTo = _balances[_to] + _value;
+    _balances[from] = newBalanceFrom;
+    _balances[_to] = newBalanceTo;
 
-uint256 newBalanceFrom = _balances[from] - _value;
-uint256 newBalanceTo = _balances[_to] + _value;
-_balances[from] = newBalanceFrom;
-_balances[_to] = newBalanceTo;
-
-emit Transfer(msg.sender, _to, _value);
-return true;
+    emit Transfer(msg.sender, _to, _value);
+    return true;
 }
 ```
 
@@ -97,9 +96,9 @@ function transfer(address _to, uint256 _value) external returns (bool) {
 ### Finding the bug using Mythril
 
 ```
-scribbe --arm -m file ./contracts/vulnerableERC20.sol
+scribble --arm -m files ./contracts/vulnerableERC20.sol
 myth analyze ./contracts/vulnerableERC20.sol
 
 # Always clean up after yourself 😉
-scribble --disarm -m file ./contracts/vulnerableERC20.sol
+scribble --disarm -m files ./contracts/vulnerableERC20.sol
 ```
