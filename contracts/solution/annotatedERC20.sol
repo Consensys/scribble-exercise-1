@@ -1,6 +1,6 @@
 pragma solidity ^0.6.0;
 
-contract AnnotatedToken {
+contract VulnerableToken {
   uint256 private _totalSupply;
   mapping (address => uint256) private _balances;
   mapping (address => mapping (address => uint256)) private _allowances;
@@ -22,11 +22,16 @@ contract AnnotatedToken {
     return _allowances[_owner][_spender];
   }
 
-  /// if_succeeds {:msg "Transfer does not modify the sum of balances" } old(_balances[_to]) + old(_balances[msg.sender]) == _balances[_to] + _balances[msg.sender];
+  /// #if_succeeds msg.sender != _to ==> _balances[_to] == old(_balances[_to]) + _value;
+  /// #if_succeeds msg.sender != _to ==> _balances[msg.sender] == old(_balances[msg.sender]) - _value;
+  /// #if_succeeds msg.sender == _to ==> _balances[msg.sender] == old(_balances[_to]);
+  /// #if_succeeds old(_balances[msg.sender]) >= _value;
   function transfer(address _to, uint256 _value) external returns (bool) {
     address from = msg.sender;
     require(_value <= _balances[from]);
 
+    // _balances[from] -= _value;
+    // _balances[_to] += _value;
 
     uint256 newBalanceFrom = _balances[from] - _value;
     uint256 newBalanceTo = _balances[_to] + _value;
