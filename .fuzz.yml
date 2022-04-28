@@ -7,7 +7,7 @@ fuzz:
     # The following address is going to be the main target for the fuzzing campaign
     deployed_contract_address: "0xe78A0F7E598Cc8b0Bb87894B0F60dD2a88d6a8Ab"
     
-    # We'll do fuzzing with 32 cores 🚀
+    # We'll do fuzzing with 2 cores 🚀
     number_of_cores: 2
     
     # When the campaign is created it'll get a name <prefix>_<random_characters>
@@ -15,10 +15,9 @@ fuzz:
     
     # Point to your ganache node which holds the seed 🌱
     rpc_url: "http://localhost:8545"
-    faas_url: "http://fuzzing.diligence.tools"
     
 
     # This is the contract that the campaign will show coverage for/ map issues to etc
     # It's a list of all the relevant contracts (don't worry about dependencies, we'll get those automatically 🙌)
     targets:
-        - "/Users/walker/Development/scribble-workshop/scribble-exercise-1/contracts/vulnerableERC20.sol"
+        - "contracts/vulnerableERC20.sol"
