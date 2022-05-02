@@ -1,6 +1,6 @@
 pragma solidity ^0.6.0;
 
-contract VulnerableToken {
+contract AnnotatedVulnerableToken {
   uint256 private _totalSupply;
   mapping (address => uint256) private _balances;
   mapping (address => mapping (address => uint256)) private _allowances;
