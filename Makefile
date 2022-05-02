@@ -7,6 +7,14 @@ fuzz:
 	pkill -f ganache
 	fuzz disarm
 
+fuzz-hardhat:
+	fuzz -c .fuzz_hardhat.yml arm
+	npx hardhat compile
+	ganache --deterministic &> /dev/null &
+	npx hardhat run --network localhost scripts/hardhat_seed.js
+	fuzz -c .fuzz_hardhat.yml run
+	pkill -f ganache
+	fuzz -c .fuzz_hardhat.yml disarm
 
 clean:
 	rm -rf ./build
