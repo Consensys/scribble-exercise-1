@@ -10,10 +10,12 @@ fuzz:
     
     # We'll do fuzzing with 2 cores 🚀
     number_of_cores: 2
-    
+  
+    # Run the campaign for just 10 minutes
+    time_limit: 10m 
+
     # When the campaign is created it'll get a name <prefix>_<random_characters>
     campaign_name_prefix: "ERC20 campaign"
-    
     # Point to your ganache node which holds the seed 🌱
     rpc_url: "http://localhost:8545"
     
