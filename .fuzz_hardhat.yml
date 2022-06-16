@@ -16,12 +16,13 @@ fuzz:
 
     # Put the campaign in the Sribble Exercise 1 project
     project: "Scribble Exercise 1"
-
+    
     # When the campaign is created it'll get a name <prefix>_<random_characters>
     campaign_name_prefix: "ERC20 campaign"
     # Point to your ganache node which holds the seed 🌱
     rpc_url: "http://localhost:8545"
-    
+
+    key: ""
 
     # This is the contract that the campaign will show coverage for/ map issues to etc
     # It's a list of all the relevant contracts (don't worry about dependencies, we'll get those automatically 🙌)
