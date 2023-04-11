@@ -22,7 +22,7 @@ fuzz:
     # Point to your ganache node which holds the seed 🌱
     rpc_url: "http://localhost:8545"
     
-    key: ""
+    key: ""MXczMzBnN1NUVFJmRU5PUTh0QUlwT0s4S005d2ZnWmY6OmRpbGlnZW5jZS51cy5hdXRoMC5jb20=::v1.MZBSAhjNaAz32K8XE1VYw_KRuIJrpc_vcxA3YEOOfmNbfKJmFsBFBfR_rlL17vbhTdLSU4urhqswBHYhi1qgEQs
 
     # This is the contract that the campaign will show coverage for/ map issues to etc
     # It's a list of all the relevant contracts (don't worry about dependencies, we'll get those automatically 🙌)
