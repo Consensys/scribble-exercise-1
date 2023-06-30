@@ -1,4 +1,5 @@
-pragma solidity ^0.6.0;
+//pragma solidity ^0.6.0;
+pragma solidity >=0.8.4;
 
 contract AnnotatedVulnerableToken {
   uint256 private _totalSupply;

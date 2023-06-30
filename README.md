@@ -12,10 +12,8 @@ Scribble Docs 📚 -> https://docs.scribble.codes/
 
 ### Installation
 ```
-# We'll use Mythril to automatically test specifications
-pip3 install mythril
 
-# Make sure to use node 10-12
+# Make sure to use node 10-16
 npm install eth-scribble --global
 npm install truffle --global
 npm install ganache-cli --global
@@ -92,13 +90,3 @@ function transfer(address _to, uint256 _value) external returns (bool) {
 }
 </pre>
 </details>
-
-### Finding the bug using Mythril
-
-```
-scribble --arm -m files ./contracts/vulnerableERC20.sol
-myth analyze ./contracts/vulnerableERC20.sol
-
-# Always clean up after yourself 😉
-scribble --disarm -m files ./contracts/vulnerableERC20.sol
-```

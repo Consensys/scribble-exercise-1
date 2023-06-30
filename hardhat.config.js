@@ -3,7 +3,14 @@
  */
  require("@nomiclabs/hardhat-ethers");
 
-module.exports = {
+/*
+ module.exports = {
   solidity: "0.6.12",
+
+};
+*/
+
+module.exports = {
+  solidity: "0.8.10",
 
 };
