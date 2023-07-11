@@ -51,7 +51,7 @@ Properties that make sense:
 <summary> If the transfer function succeeds then the recipient had sufficient balance at the start</summary>
 <br>
 <pre>
-/// #if_succeeds {:msg "The sender has sufficient balance at the start"} old(_balances[msg.sender] <= _value)
+/// #if_succeeds {:msg "The sender has sufficient balance at the start"} old(_balances[msg.sender] <= _value);
 function transfer(address _to, uint256 _value) external returns (bool) {
     ...
 }
