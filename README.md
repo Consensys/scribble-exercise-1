@@ -59,7 +59,7 @@ function transfer(address _to, uint256 _value) external returns (bool) {
 </details>
 
 <details>
-<summary> If the transfer succeeds then the sender will have `_value` subtracted from it’s balance (unless you transfer to yourself)</summary>
+<summary> If the transfer succeeds then the sender will have `_value` subtracted from its balance (unless you transfer to yourself)</summary>
 <br>
 <pre>
 /// #if_succeeds {:msg "The sender has _value less balance"} msg.sender != _to ==> old(_balances[msg.sender]) - _value == _balances[msg.sender]; 
@@ -70,7 +70,7 @@ function transfer(address _to, uint256 _value) external returns (bool) {
 </details>
 
 <details>
-<summary> If the transfer succeeds then the receiver will have `_value` added to it’s balance  (unless you transfer to yourself)</summary>
+<summary> If the transfer succeeds then the receiver will have `_value` added to its balance  (unless you transfer to yourself)</summary>
 <br>
 <pre>
 /// #if_succeeds {:msg "The receiver receives _value"} msg.sender != _to ==> old(_balances[_to]) + _value == _balances[_to]; 
@@ -81,7 +81,7 @@ function transfer(address _to, uint256 _value) external returns (bool) {
 </details>
 
 <details>
-<summary>  If the transfer succeeds then the sum of the balances between the sender and receiver remains he same</summary>
+<summary>  If the transfer succeeds then the sum of the balances between the sender and receiver remains the same</summary>
 <br>
 <pre>
 /// #if_succeeds {:msg "Transfer does not modify the sum of balances" } old(_balances[_to]) + old(_balances[msg.sender]) == _balances[_to] + _balances[msg.sender];
