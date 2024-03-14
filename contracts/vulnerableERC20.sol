@@ -33,8 +33,7 @@ contract VulnerableToken {
         address from = msg.sender;
         require(_value <= _balances[from]);
 
-        // _balances[from] -= _value;
-        // _balances[_to] += _value;
+
         uint256 newBalanceFrom = _balances[from] - _value;
         uint256 newBalanceTo = _balances[_to] + _value;
         _balances[from] = newBalanceFrom;
