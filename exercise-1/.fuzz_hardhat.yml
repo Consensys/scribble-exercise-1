@@ -1,0 +1,30 @@
+# .fuzz_token.yml
+
+fuzz:
+    # Tell the CLI where to find the compiled contracts and compilation artifacts
+    build_directory: artifacts
+    ide: "hardhat"
+
+    # The following address is going to be the main target for the fuzzing campaign
+    deployed_contract_address: "0xe78A0F7E598Cc8b0Bb87894B0F60dD2a88d6a8Ab"
+    
+    # We'll do fuzzing with 2 cores 🚀
+    number_of_cores: 2
+  
+    # Run the campaign for just 10 minutes
+    time_limit: 10m 
+
+    # Put the campaign in the Sribble Exercise 1 project
+    project: "Scribble Exercise 1"
+    
+    # When the campaign is created it'll get a name <prefix>_<random_characters>
+    campaign_name_prefix: "ERC20 campaign"
+    # Point to your ganache node which holds the seed 🌱
+    rpc_url: "http://localhost:8545"
+
+    key: ""
+
+    # This is the contract that the campaign will show coverage for/ map issues to etc
+    # It's a list of all the relevant contracts (don't worry about dependencies, we'll get those automatically 🙌)
+    targets:
+        - "contracts/vulnerableERC20.sol"
